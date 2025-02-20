@@ -1,1 +1,104 @@
+import java.util.Scanner;
+public class dsapractices {
+	
+	
+		public static void main(String[] args)
+		{
+	        //get input from user
+			Scanner obj=new Scanner(System.in);
+			int i=obj.nextInt();
+	      //  when we try to get input after integer it consider as stop. so, we need to clarify that for that purpose we use this line
+			obj.nextLine();
+			String S=obj.nextLine();
+			//in java nextchar is not available instead of we use next().charAt(0)
+			char ch=obj.next().charAt(0);
+	        System.out.println(i);
+	        System.out.println(S);
+	        System.out.println(ch);
+	    }
 
+}
+//Question 2
+import java.util.Scanner;
+ public class dsapractices{
+	public static void main(String[] args)
+	{
+      //get input from user for the variable
+		Scanner obj=new Scanner(System.in);
+		
+		int tri1=obj.nextInt();
+		int tri2=obj.nextInt();
+		int tri3=obj.nextInt();
+		int sum=180;
+		int result=tri1+tri2+tri3;
+      //checks sum equal to result. Then display o/p depend on the input 
+		if(sum==result)
+		{
+			System.out.println("Triangle can be formed");
+		}
+		else
+		{
+			System.out.println("Triangle cannot be formed");
+		}}}
+//Question 3
+import java.util.Scanner;
+public class dsapractices{ 
+               public static void main(String[] args)
+               {
+                   Scanner obj=new Scanner(System.in);
+                   
+   int mark=obj.nextInt();
+   if(mark>=90)
+       {
+           System.out.println("Grade A");
+       }
+       else if(mark>=80)
+       {
+           System.out.println("Grade B");
+       }
+       else if(mark>=60)
+       {
+           System.out.println("Grade C");
+       }
+       else if(mark>=35)
+       {
+           System.out.println("Grade D");
+       }
+       else if(mark<35)
+       {
+           System.out.println("Faile")
+       }}}
+  //Question 4
+			
+  import java.util.Scanner;
+
+  public class dsapractices {
+       public static void main(String[] args)
+      {
+          Scanner obj=new Scanner(System.in); 
+          int size=obj.nextInt();
+          //use switch case for multiple condition
+      switch(size)
+      {
+      case 29:
+      {
+      System.out.println("Small");
+      break;
+      }
+      case 38:
+      {
+      System.out.println("medium");
+      break;
+      }
+      case 42:
+     {
+     System.out.println("Xlarge");
+     break;
+     }
+     default:
+     {
+     System.out.println("Invalid");
+     }
+     }
+     }
+                         
