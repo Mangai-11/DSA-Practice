@@ -1,14 +1,18 @@
 //Question 1
-package Demo;
-import java.util.Scanner;
-public class dsapractices{
+****
+****
+****
+****
+   package Demo;
+   import java.util.Scanner;
+    public class dsapractices{
     public static void main(String[] args)
     {
     	Scanner obj=new Scanner(System.in);
     	int n=obj.nextInt();
       for(int i=1;i<=n;i++)
       {
-    	  for(int j=1;j<=n-i+1;j++)
+    	  for(int j=1;j<=n;j++)
     	  {
     		  System.out.print("*");
     	  }
@@ -16,28 +20,36 @@ public class dsapractices{
       }}}
       
       //Question 2
+	  1234
+	  1234
+	  1234
+	  1234
       package Demo;
-import java.util.Scanner;
-public class dsapractices{
-    public static void main(String[] args)
+      import java.util.Scanner;
+       public class dsapractices{
+      public static void main(String[] args)
     {
     	Scanner obj=new Scanner(System.in);
     	int n=obj.nextInt();
-      for(int i=n;i>=1;i--)
+		for(int i=1;i<=n;i++)
       {
-    	  for( int j=i;j>=1;j--)
+    	  for(int j=1;j<=n;j++)
     	  {
     		  System.out.print(j);
-    	      	 
-    	        }
-    	  System.out.println();
     	  }
+    	  System.out.println();
+		}
+      
     }}
 
     //Question 3
+	1
+	12
+	123
+	1234
     package Demo;
-import java.util.Scanner;
-public class dsapractices{
+    import java.util.Scanner;
+     public class dsapractices{
     public static void main(String[] args)
     {
     	Scanner obj=new Scanner(System.in);
@@ -46,7 +58,7 @@ public class dsapractices{
       {
     	  for( int j=1;j<=i;j++)
     	  {
-    		  System.out.print("*");
+    		  System.out.print(j);
     	      	 
     	        }
     	  System.out.println();
@@ -54,23 +66,21 @@ public class dsapractices{
     }}
 
     //Question 4
+	* ** ***
     package Demo;
-import java.util.Scanner;
-public class dsapractices{
+   import java.util.Scanner;
+    public class dsapractices{
 	public static void main(String[] args)
 	{
 	Scanner obj=new Scanner(System.in);
 	int n=obj.nextInt();
-	int count=1;
-	for(int i=1;i<=n;i++)
-	{
-		 for(int j=1;j<=i;j++)
-		 {
-			 System.out.print(count);
-		 }
+	 for(int i=1;i<=n;i++){
+		for(int j=1;j<=i;j++){
+			System.out.print("*");
+		}
+		System.out.print(" ");
+	 }
 	
-		 System.out.println();
-		 count++;
-	}}
+	}
 	
 }
