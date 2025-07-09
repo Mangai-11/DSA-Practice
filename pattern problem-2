@@ -1,1 +1,214 @@
+//Question 5 
+   1 2 3 4
+   1 2 3 
+   1 2
+   1
 
+  class solution{
+    public static void main(String[] args){
+        int n=4
+        for(int i=n;i>=1;i--){
+            for(int j=1;j<=i;j++){
+                System.out.print(j);
+            }
+            System.out.println(" ");
+        }
+    }
+  }
+
+  //Question 6
+  ****
+  ***
+  **
+  *
+  class solution{
+    public static void main(String[] args){
+        int n=4
+        for(int i=n;i>=1;i--){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println(" ");
+        }
+    }
+  }
+
+//Question 7
+4321
+321
+21
+1
+class solution{
+    public static void main(String[] args){
+        int n=4
+        for(int i=n;i>=1;i--){
+            for(int j=1;j<=i;j++){
+                System.out.print(j);
+            }
+            System.out.println(" ");
+        }
+    }
+  }
+//Question 8
+*
+**
+***
+****
+class solution{
+    public static void main(String[] args){
+        int n=4
+        for(int i=n;i>=1;i--){
+            for(int j=i;j<=1;j--){
+                System.out.print(j);
+            }
+            System.out.println(" ");
+        }
+    }
+  }
+
+  //Question 9
+  *
+  **
+  ***
+  ****
+  ***
+  **
+  *
+  class solution{
+    public static void main(String[] args){
+        int n=4
+        for(int i=1;i<=n-1;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println(" ");
+        }
+        for(int i=n;i>=1;i--){
+            for(int j=i;j>=1;j--){
+                System.out.print("*");
+            }
+            System.out.println(" ");
+        }   
+ }
+  }
+
+  //Question 10
+      *
+   *  *  *
+ * *  *  * *
+* * * * * * *
+
+class solution{
+    public static void main(String[] args){
+       
+  int n=4;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+        
+       
+            for(int j=1;j<=2*i-1;j++){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }}
+
+    //Question 11
+    *******
+     *****
+      ***
+       *
+      class solution{
+    public static void main(String[] args){
+       
+         int n=4;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i-1;j++){
+                System.out.print(" ");
+            }
+        
+       
+            for(int j=1;j<=(2*n)-(2*i-1);j++){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }} 
+
+    //Question 12
+   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *
+   
+   class solution{
+    public static void main(String[] args){
+       
+         int n=4;
+        for(int i=1;i<=n-1;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+        
+       
+            for(int j=1;j<=2*i-1;j++){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+        
+          for(int i=1;i<=n;i++){
+            for(int j=1;j<=i-1;j++){
+                System.out.print(" ");
+            }
+        
+       
+            for(int j=1;j<=(2*n)-(2*i-1);j++){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }} 
+ 
+    //Question 13
+    1
+    23
+    456
+    789
+    class solution{
+    public static void main(String[] args){
+     int n=4;
+          int count =1;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(count);
+          count++;
+            }
+              System.out.println("  ");
+            }
+        } }
+       
+       //Question 14
+       1
+       22
+       333
+       4444
+       class solution{
+    public static void main(String[] args){
+     int n=4;
+          int count =1;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(count);
+            }
+                  System.out.println("  ");
+          count++;
+            
+            }
+        } }
+       
