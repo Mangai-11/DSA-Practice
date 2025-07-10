@@ -1,5 +1,7 @@
+==================
 //Question 1
  odd or even
+ ===================
 
 class solution {
     public boolean oddeven(int n) {
@@ -17,10 +19,10 @@ class solution {
         int n=3;
         System.out.println(obj.oddeven(n));
     }}
-
+=========================
     //Question 2
     last digit
-
+=========================
  class Main {
     public static void main(String[] args) {
         int n=1234;
@@ -28,9 +30,10 @@ class solution {
             int ld=n%10;
             System.out.print(ld); 
     }}
-    
+   =========================== 
     //Question 3
     reverse digit
+    ==========================
     class Main {
     public static void main(String[] args) {
         int n=1234;
@@ -39,9 +42,10 @@ class solution {
             System.out.print(ld);
             n=n/10;}
     }}
-
+     ============================
     //Question 4
     first digit
+    ==============================
      class Main {
     public static void main(String[] args) {
         int n=7234;
@@ -56,9 +60,10 @@ class solution {
                System.out.print(ld);
             }
     }}
-
+    ======================
     //Question 5
     count digits
+    =======================
      class Main {
     public static void main(String[] args) {
         int count=0;
@@ -72,10 +77,10 @@ class solution {
           }
           System.out.print(count);
     }}
-
+     ===================
     //Question 6
     count odd 
-    
+    ====================
  class Main {
     public static void main(String[] args) {
         int count=0;
@@ -92,9 +97,10 @@ class solution {
           }
           System.out.print(count);
     }}
-
+    ========================
     //Question 7
     add first and last digit 
+    ========================
     class Solution {
     public int corner_digitSum(int n) {
         if(n<10)
@@ -122,9 +128,11 @@ class solution {
         System.out.print(obj.corner_digitSum(n));
           
     }}
-
+=====================================
     //Question 8
-    kth digitclass Solution {
+    kthdigit
+    ==========================
+    class Solution {
     public int kthdigit(int a,int b,int k) {
         long power=(long)Math.pow(a,b);
         int i=1;
