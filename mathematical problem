@@ -1,5 +1,6 @@
 //Question 1
  odd or even
+
 class solution {
     public boolean oddeven(int n) {
           
