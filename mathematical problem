@@ -1,0 +1,150 @@
+//Question 1
+ odd or even
+class solution {
+    public boolean oddeven(int n) {
+          
+           if(n%2==0){
+               return true;
+           }
+           else{
+               return false;
+           }
+    }}
+           class Main {
+    public static void main(String[] args) {
+        solution obj=new solution();
+        int n=3;
+        System.out.println(obj.oddeven(n));
+    }}
+
+    //Question 2
+    last digit
+
+ class Main {
+    public static void main(String[] args) {
+        int n=1234;
+  
+            int ld=n%10;
+            System.out.print(ld); 
+    }}
+    
+    //Question 3
+    reverse digit
+    class Main {
+    public static void main(String[] args) {
+        int n=1234;
+          while(n>0){
+            int ld=n%10;
+            System.out.print(ld);
+            n=n/10;}
+    }}
+
+    //Question 4
+    first digit
+     class Main {
+    public static void main(String[] args) {
+        int n=7234;
+        int ld=0;
+        int org=n;
+          while(n>0){
+             ld=n%10;
+            n=n/10;
+              
+          }
+            if(n==0){
+               System.out.print(ld);
+            }
+    }}
+
+    //Question 5
+    count digits
+     class Main {
+    public static void main(String[] args) {
+        int count=0;
+        int n=7234747;
+       
+          while(n>0){
+             int ld=n%10;
+             count++;
+            n=n/10;
+              
+          }
+          System.out.print(count);
+    }}
+
+    //Question 6
+    count odd 
+    
+ class Main {
+    public static void main(String[] args) {
+        int count=0;
+        int n=723474795;
+       
+          while(n>0){
+             int ld=n%10;
+             if(ld%2!=0){
+                 count++;
+             }
+        
+            n=n/10;
+              
+          }
+          System.out.print(count);
+    }}
+
+    //Question 7
+    add first and last digit 
+    class Solution {
+    public int corner_digitSum(int n) {
+        if(n<10)
+        {
+            return n;
+        }
+        // code here
+        int ld=n%10;
+        while(n>=10)
+        {
+            
+            n=n/10;
+        }
+        int fd=n;
+        
+          return ld+fd;
+        
+    }
+}
+
+ class Main {
+    public static void main(String[] args) {
+        int n=12345;
+        Solution obj=new Solution();
+        System.out.print(obj.corner_digitSum(n));
+          
+    }}
+
+    //Question 8
+    kth digitclass Solution {
+    public int kthdigit(int a,int b,int k) {
+        long power=(long)Math.pow(a,b);
+        int i=1;
+        while(power>0){
+        
+         int ld=(int)power%10;
+        if(k==i){
+            return ld;
+        }
+        i++;
+        power=power/10;}
+        return 0;
+    }
+}
+
+ class Main {
+    public static void main(String[] args) {
+        int a=5,b=2,k=3;
+        Solution obj=new Solution();
+        System.out.print(obj.kthdigit(a,b,k));
+          
+    }}
+
+    
