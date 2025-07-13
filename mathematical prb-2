@@ -1,0 +1,382 @@
+==========================
+//Question 1 - palindrome
+=========================
+class Solution {
+    public boolean isPalindrome(int n) {
+        // code here
+        
+        if(n<10){
+            return true;
+        }
+        int org=n;
+        int sum=0;
+        while(n>0){
+            int ld=n%10;
+            sum=sum*10+ld;
+            n=n/10;
+        }
+        if(sum==org){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
+ class Main {
+    public static void main(String[] args) {
+        int n=5;
+        Solution obj=new Solution();
+        System.out.print(obj.isPalindrome(n));
+          
+    }}
+
+    =====================
+    //Question 2 - reverse digit
+    =====================
+    class Solution {
+    public int reverse(int n) {
+        // code here
+        
+        if(n<10){
+            return n;
+        }
+        int sum=0;
+        while(n>0){
+            int ld=n%10;
+            sum=sum*10+ld;
+            n=n/10;
+        }
+       return sum;
+    }
+}
+ class Main {
+    public static void main(String[] args) {
+        int n=5678;
+        Solution obj=new Solution();
+        System.out.print(obj.reverse(n));
+          
+    }}
+
+    =======================
+    //Question -3 - factorial
+    =======================
+    class Solution {
+    static int factorial(int n) {
+        // code here
+        int fact=1;
+        for(int i=1;i<=n;i++)
+        {
+            fact=fact*i;
+            
+        }
+        return fact;
+    }
+}
+ class Main {
+    public static void main(String[] args) {
+        int n=3;
+        Solution obj=new Solution();
+        System.out.print(obj.factorial(n));
+          
+    }}
+    
+    ======================
+    //Question 4 - prime no
+    ======================
+    class Solution {
+    static boolean isPrime(int n) {
+        // code here
+        if(n<=1)
+        {return false;}
+        
+        for(int i=2;i<=Math.sqrt(n);i++)
+        {
+            if(n%i==0)
+            {
+                return false;
+            }
+        }    
+                return true;
+            
+        
+    }
+}
+ class Main {
+    public static void main(String[] args) {
+        int n=4;
+        Solution obj=new Solution();
+        System.out.print(obj.isPrime(n));
+          
+    }}
+
+    ========================
+    //Question 5 - no of divisor
+    ==========================
+    class Solution {
+    static int countDivisors(int n) {
+        
+        int count=0;
+        for(int i=1;i<=n;i++)
+        {
+            if(n%i==0 && i%3==0)
+            count++;
+        }
+        return count;
+    }
+}
+ class Main {
+    public static void main(String[] args) {
+        int n=4;
+        Solution obj=new Solution();
+        System.out.print(obj.CountDivisor(n));
+          
+    }}
+
+    ===================
+    //Question 6 - trailing zeros ex.120 o/p:1
+    ====================
+    class Solution {
+  public  int factorial(int n) {
+        
+        int fact=1;
+        for(int i=1;i<=n;i++)
+        {
+            fact=fact*i;
+            
+        }
+        int count=0;
+        while(fact%10==0){
+           
+                count++;
+                fact=fact/10;
+            }
+         return count;
+}}
+ class Main {
+    public static void main(String[] args) {
+        int n=7;
+        Solution obj=new Solution();
+        System.out.print(obj.factorial(n));
+          
+    }}
+======================
+//Question -7 ->perfect no - sum of divisor=org no
+======================
+
+class Main {
+    public static void main(String[] args) {
+        int n=28,sum=1;
+        for(int i=2;i<Math.sqrt(n);i++){
+            if(n%i==0){
+                sum=sum+i;
+            
+            if(n/i!=i){
+                sum=sum+(n/i);
+            }}
+        }
+        if(sum==n){
+            System.out.print("pn");
+        }
+        else{
+             System.out.print("npn");
+        }
+        
+          
+    }}
+
+=======================
+//Question 8 - gcd
+======================
+class Solution {
+    public static int gcd(int a, int b) {
+        // code here
+        if(a ==0) return b;
+        if(b== 0) return a;
+        while(a!=b)
+        {
+            if(a>b) 
+            a = a-b;
+            if(b>a) 
+            b = b-a;
+            
+        }
+        return a;
+    }
+}
+====================
+//Question -9 - middle no
+=====================
+
+ class Solution {
+    int middle(int a, int b, int c) {
+        // code here
+        if((a>b && a<c)||(a<b && a>c)){
+            return a;
+        }
+        else if((b<a && b>c)||(b>a && b<c)){
+            return b;
+        }
+        else{
+            return c;
+        }
+    }
+
+
+    public static void main(String[] args){
+        int a=5,b=7,c=9;
+        Solution obj=new Solution();
+        System.out.print(obj.middle(a,b,c));
+    }
+}
+
+===================
+//Question 10- nth term series 1,3,6,10..
+=====================
+class Solution {
+    static int findNthTerm(int n) {
+        // code here
+        int sum=0;
+        for(int i=1;i<=n;i++)
+        {
+            sum=sum+i;
+        }
+        return  sum;
+    }
+};
+
+==================
+//Question 11 series sum -1+1+2+1+2+3....
+=========================
+class Solution {
+    static long sumOfTheSeries(long n) {
+        // code here
+        int sum=0,term=0;
+        for(int i=1;i<=n;i++)
+        {
+            sum=sum+i;
+            term=term+sum;
+        }
+        return term;
+    }
+}
+=======================================
+//Question 12 series sum -1+1+3+1+3+5....2n-1(odd term)
+=======================================
+class Solution {
+    static long sumOfTheSeries(long n) {
+        // code here
+        long x=0,sum=0;
+        for(int i=1;i<=(2*n-1);i=i+2)
+        {
+            x=x+i;
+            sum=sum+x;
+        }
+    
+    return sum;
+    }
+}
+============================
+//Question 13 1+2+3=6
+===========================
+class Solution {
+    public static int findSum(int n) {
+        // code here
+        int sum=0;
+        for(int i=1;i<=n;i++)
+        {
+            sum=sum+i;
+            
+        }
+        return sum;
+    }
+}
+=============================
+//Question 14 1^3+2^3+3^3
+============================
+class Solution {
+    int sumOfSeries(int n) {
+        // code here
+        int sum=0;
+        for(int i=1;i<=n;i++){
+            sum=sum+i*i*i;
+        }
+        return sum;
+    }
+}
+===========================
+//Question 15 1^5+2^5+3^5
+==========================
+class Solution {
+    long sumOfFifthPowers(long N) {
+        // code here
+        long sum=0;
+        for(long i=1;i<=N;i++){
+            sum=sum+(long)Math.pow(i,5);
+        }
+        return sum;
+    }
+}
+=============================
+//Question 16 - square diff |(1^2+2^2)-(1+2)^2|
+=============================
+class Solution {
+    static long squaresDiff(int N) {
+        // code here
+        long sum=0,term=0,square=0;
+        for(long i=1;i<=N;i++)
+        {
+            sum=sum+i;
+            term+=(long)i*i;}
+            square=sum*sum;
+            long diff=Math.abs(square-term);
+        
+        return diff;
+    }
+}
+============================
+//Question 17 - reverse without no leading zeros
+=============================
+class Solution {
+    public int reverseDigits(int n) {
+        // Code here
+        int ld=0,rev=0;
+        
+        while(n>0){
+          ld=n%10;
+          rev=rev*10+ld;
+            n=n/10;
+        }
+        
+    
+        return rev;
+    }
+}
+==================================
+//Question 18- count perfect squares
+==================================
+class Solution {
+    static int countSquares(int n) {
+        // code here
+        int count=0,square=0;
+        for(int i=1;i*i<n;i++){
+            count++;
+        }
+        return count;
+    }
+}
+============================
+//Question 19 -swap no
+============================
+class Main{
+    public static void main(String[] args){
+        int a=5,b=0;
+    int temp=a;
+    a=b;
+    b=temp;
+       
+        System.out.println(a);
+        System.out.print(b);
+        
+    }
+}
