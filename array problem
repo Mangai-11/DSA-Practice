@@ -1,0 +1,359 @@
+=============================
+//Question 1 -print elements in the array
+=================================
+class Solution {
+    // Just print the space seperated array elements
+    void printArray(int arr[]) {
+        //   code here
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+
+================================
+//Question -2 - sum of array
+=================================
+lass Solution {
+    int arraySum(int arr[]) {
+        // code here
+        int sum=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            sum=sum+arr[i];
+        }
+        return sum;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,5};
+    Solution obj=new Solution();
+    System.out.print(obj.arraySum(arr));
+    }
+}
+==================================
+//Question 3 - count of odd & even digit 
+=================================
+import java.util.Arrays;
+class Solution {
+    public int[] countOddEven(int[] arr) {
+        // Code here
+        int even=0,odd=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]%2==0){
+                even++;
+            }
+            else{
+                odd++;
+            }
+        }
+        return new int[]{ odd,even};
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        int arr[]={1,9,3,7,5};
+    Solution obj=new Solution();
+    int[] result = obj.countOddEven(arr);
+   System.out.println(Arrays.toString(result));
+    }
+}
+====================================
+//Question -4 largest in array
+======================================
+
+import java.util.Arrays;
+class Solution {
+    public static int largest(int[] arr) {
+        // code here
+        int large=arr[0];
+        for(int i=1;i<arr.length;i++)
+        {
+            if(large<arr[i]){
+                large=arr[i];
+            }
+        }
+        return large;
+    }
+}
+
+
+class Main {
+    public static void main(String[] args) {
+        int arr[]={1,9,3,7,5};
+    Solution obj=new Solution();
+    int result = obj.largest(arr);
+   System.out.println(result);
+    }
+}
+===============================
+//Question -5 find first and second min
+===============================
+import java.util.Arrays;
+import java.util.ArrayList;
+
+class Solution {
+    
+    public ArrayList<Integer> minAnd2ndMin(int[] arr) {
+        // code here
+         ArrayList<Integer> result = new ArrayList<>();
+          if (arr.length < 2) {
+            result.add(-1);
+            return result;
+        }
+
+       int min1 = Integer.MAX_VALUE;
+        int min2 = Integer.MAX_VALUE;
+
+        // Find min1 and min2
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min1) {
+                min2 = min1;
+                min1 = arr[i];
+            } else if (arr[i] > min1 && arr[i] < min2) {
+                min2 = arr[i];
+            }
+        }
+
+        // Check if second minimum was found
+        if (min2 == Integer.MAX_VALUE) {
+            result.add(-1); // Second min not found (e.g., all elements are equal)
+        } else {
+            result.add(min1);
+            result.add(min2);
+        }
+
+        return result;
+    }
+}   
+
+      public class Main {
+    public static void main(String[] args) {
+        Solution obj = new Solution();
+
+        int[] arr1 = {3, 1, 5, 1, 4};
+        int[] arr2 = {2, 2, 2};
+        int[] arr3 = {7};
+        int[] arr4 = {10, 20, 30};
+
+        System.out.println("Test 1: " + obj.minAnd2ndMin(arr1)); // [1, 3]
+        System.out.println("Test 2: " + obj.minAnd2ndMin(arr2)); // [-1]
+        System.out.println("Test 3: " + obj.minAnd2ndMin(arr3)); // [-1]
+        System.out.println("Test 4: " + obj.minAnd2ndMin(arr4)); // [10, 20]
+    }
+}
+=========================
+//Question 6 min and max
+==========================
+import java.util.Arrays;
+import java.util.ArrayList;
+
+class Solution {
+    public int[] getMinMax(int[] arr) {
+        // Code Here
+        int max=arr[0],min =arr[0];
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]<min)
+            {
+                min=arr[i];
+            }
+            if(arr[i]>max)
+            {
+                max=arr[i];
+            }
+        }
+    
+        return new int[]{min,max};
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        int[] arr = {10, 4, 2, 8, 6};
+        int[] result = sol.getMinMax(arr);
+    System.out.println("Min and Max values are: " + Arrays.toString(result));
+    }
+}
+================================
+//Question 7 -get alternatives
+===============================
+import java.util.ArrayList;
+class Solution {
+    // function to print alternate elements of an array
+    public ArrayList<Integer> getAlternates(int arr[]) {
+        // Code Here
+        ArrayList<Integer> ans=new ArrayList<>();
+        for(int i=0;i<arr.length;i=i+2)
+        {
+            ans.add(arr[i]);
+        }
+        return ans;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        int[] arr = {10, 4, 2, 8, 6};
+          ArrayList<Integer> result = sol.getAlternates(arr);
+        System.out.println("Alternate elements are: " + result);
+    }
+}
+================================
+//Question 8 - find ele at index
+================================
+class Solution {
+    public static int findElementAtIndex(int key, int[] arr) {
+        // code here
+        for(int i=0;i<arr.length;i++){
+            if(i==key){
+                return arr[i];
+            }
+        }
+        return 0;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        int[] arr = {10, 2, 2, 8, 6};
+        int key= 4;  // index to access
+int result = sol.findElementAtIndex(key, arr);  // ✅ correct
+
+        System.out.println("search elements are: " + result);
+    }
+}
+====================================
+//Question 9 palindrome array
+====================================
+class Solution {
+    public static boolean isPerfect(int[] arr) {
+        int left=0;
+        int right=arr.length-1;
+        while(left<right){
+            if(arr[left]!=arr[right]){
+                return false;
+            }
+            left++;
+            right--;
+        }
+       return true; 
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 2, 1};
+        int[] arr2 = {1, 2, 3, 4, 5};
+
+        System.out.println(  Solution.isPerfect(arr1)); // true
+        System.out.println( Solution.isPerfect(arr2)); // false
+    }
+}
+=============================
+//Question 10 prod of max and min
+=============================
+class Solution {
+   
+    public long findMultiplication(int[] arr1, int[] arr2) {
+        // code here
+        long max=arr1[0],min=arr2[0];
+        
+            for(int i=0;i<arr1.length;i++){
+                if(arr1[i]>max){
+                    max=arr1[i];
+                }}
+                for(int i=0;i<arr2.length;i++){
+                if(arr2[i]<min){
+                    min=arr2[i];
+                }
+                 }
+                 long prod=max*min;
+                 return prod;
+        
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        int[] arr1 = {1, 4, 3, 9};
+        int[] arr2 = {7, 2, 8, 5};
+
+        long result = sol.findMultiplication(arr1, arr2);
+        System.out.println("Max of arr1 * Min of arr2 = " + result);
+    }
+}
+==============================
+//Question 11 seive of erothenes
+===============================
+class Main {
+    public static void main(String[] args) {
+        int n=100;
+        int[] arr=new int[n+1];
+        for(int i=2;i<=Math.sqrt(n);i++){
+            if(arr[i]==0){
+                for(int j=i*i;j<n;j=j+i){
+                    arr[j]=1;
+                }
+            }
+        }
+        for(int i=2;i<=n;i++){
+            if(arr[i]==0){
+                System.out.print(i+" ");
+            }
+        }
+    }
+}
+===============================
+//Question 12 sum of primes
+===============================
+class Main{
+    public static boolean isprime(int n){
+        if(n<=1){
+            return false;
+        }
+        for(int i=2;i<=Math.sqrt(n);i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static int sumofprime(int l,int r){
+        int sum=0;
+        for(int i=l;i<=r;i++){
+            if(isprime(i)){
+                sum=sum+i;
+            }
+        }
+        return sum;
+    }
+
+    public static void main(String[] args){
+        int l=10,r=20;
+        int result=sumofprime(l,r);
+        System.out.print(result);
+    }
+}
+==============================
+//Question 13 search for no
+==============================
+class Solution {
+    static int search(int arr[], int x) {
+        // code here
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==x){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
