@@ -1,0 +1,25 @@
+========================
+//Question 1 - print 1 to n
+==========================
+class Solution {
+    public void printNos(int n) {
+        // Code here
+        if(n==0){
+            return ;
+        }
+   
+         printNos(n-1);
+        System.out.print(n+" ");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+    Solution obj=new Solution();
+    int n=10;
+    obj.printNos(n);
+    }
+}
+=================================
+//Question 2- fibonacci
+================================
