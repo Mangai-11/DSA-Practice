@@ -1,0 +1,103 @@
+==================================
+//Question 1 - ceil and floor
+=================================
+import java.util.*;
+class Solution {
+    public int[] getFloorAndCeil(int x, int[] arr) {
+        
+        int n=arr.length;
+        Arrays.sort(arr);
+        int low=0,high=n-1;
+        int floor=-1,ceil=-1;
+       
+         while(low<=high){
+          int mid=low+(high-low)/2;
+            if(arr[mid]==x){
+                floor=arr[mid];
+                break;
+            }
+            else if(arr[mid]<x){
+                floor=arr[mid];
+                low=mid+1;
+            }
+            else{
+                high=mid-1;
+            }
+      
+         }
+         low=0;
+         high=n-1;
+         while(low<=high){
+   int mid=low+(high-low)/2;
+            if(arr[mid]==x){
+                ceil=arr[mid];
+                break;
+            }
+            else if(arr[mid]>x){
+                ceil=arr[mid];
+                high=mid-1;
+            }
+            else{
+                low=mid+1;
+            }
+         
+         
+        }
+     
+         return new int[]{floor,ceil};
+    }
+
+ public static void main(String[] args) {
+        Solution sol = new Solution();
+        
+        // Example test cases
+        int[] arr1 = {5, 1, 8, 10, 3};
+        int x1 = 7;
+        System.out.println("For x = " + x1 + ", arr = " + Arrays.toString(arr1));
+        System.out.println("Floor, Ceil = " + Arrays.toString(sol.getFloorAndCeil(x1, arr1)));
+ }}
+
+ =================================
+//Question 2 - first and last position of an element in sorted array
+=================================
+public class FirstLastBinarySearch {
+    public static int firstOccurrence(int arr[], int x) {
+        int low = 0, high = arr.length - 1, ans = -1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (arr[mid] == x) {
+                ans = mid;
+                high = mid - 1; // move left for first occurrence
+            } else if (arr[mid] < x) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return ans;
+    }
+
+    public static int lastOccurrence(int arr[], int x) {
+        int low = 0, high = arr.length - 1, ans = -1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (arr[mid] == x) {
+                ans = mid;
+                low = mid + 1; // move right for last occurrence
+            } else if (arr[mid] < x) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {2, 4, 4, 4, 8, 10, 10};
+        int x = 4;
+
+        System.out.println("First occurrence: " + firstOccurrence(arr, x));
+        System.out.println("Last occurrence: " + lastOccurrence(arr, x));
+    }
+}

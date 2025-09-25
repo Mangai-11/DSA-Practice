@@ -38,3 +38,49 @@ class Solution {
 ===========================
 Question 2- third largest
 ===========================
+class Solution {
+    public static int thirdLargest(int arr[]) {
+        // Your code here
+        
+        // code here
+        if(arr.length<3){
+            return -1;
+        }
+        int lar=Integer.MIN_VALUE;
+        int sec=Integer.MIN_VALUE;
+        int thir=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            int num=arr[i];
+            if(num>lar){
+                thir=sec;
+                sec=lar;
+                
+                lar=arr[i];
+            }
+             else if(num>sec && num!=lar){
+                thir=sec;
+                sec=num;
+            }
+            else if(num>thir && num!=sec && num!=lar){
+                thir=num;
+            }
+        }
+        if(thir== Integer.MIN_VALUE){
+            return lar;
+        }
+        return thir;
+    
+    
+
+    }
+
+    
+
+    public static void main(String[] args) {
+        int arr[]={5,5,5};
+   
+   int res=thirdLargest(arr);
+   System.out.print(res);
+   
+    }
+}

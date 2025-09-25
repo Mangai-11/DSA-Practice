@@ -1,0 +1,239 @@
+==============================
+//Question 1 -second largest element in array
+===========================
+class Solution {
+    public int getSecondLargest(int[] arr) {
+        // code here
+        if(arr.length<2){
+            return -1;
+        }
+        int lar=Integer.MIN_VALUE;
+        int sec=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>lar){
+                sec=lar;
+                lar=arr[i];
+            }
+            else if(arr[i]>sec && arr[i]!=lar){
+                sec=arr[i];
+            }
+        }
+        if(sec==Integer.MIN_VALUE){
+            return -1;
+        }
+        return sec;
+    }
+    
+
+public static void main(String[] args){
+    Solution obj=new Solution();
+    int arr[]={6,5,7,8,9};
+    int res=obj.getSecondLargest(arr);
+    System.out.print(res);
+    
+}
+}
+===========================
+//Question 2 - third largest element in array
+===========================
+class Solution {
+    int thirdLargest(int arr[]) {
+        // Your code here
+        
+        // code here
+        if(arr.length<3){
+            return -1;
+        }
+        int lar=Integer.MIN_VALUE;
+        int sec=Integer.MIN_VALUE;
+        int thir=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            int num=arr[i];
+            if(num>lar){
+                thir=sec;
+                sec=lar;
+                
+                lar=arr[i];
+            }
+             else if(num>sec && num!=lar){
+                thir=sec;
+                sec=num;
+            }
+            else if(num>thir && num!=sec && num!=lar){
+                thir=num;
+            }
+        }
+        if(thir== Integer.MIN_VALUE){
+            return lar;
+        }
+        return thir;
+    
+    
+
+    }
+
+
+
+public static void main(String[] args){
+    Solution obj=new Solution();
+    int arr[]={6,5,7,8,9};
+    int res=obj. thirdLargest(arr);
+    System.out.print(res);
+    
+}
+}
+========================
+//Question 8-mergesorted array
+==========================class Solution {
+    public void merge(int[] num1, int m, int[] num2, int n) {
+        int[] num3 = new int[m + n];
+        int i = 0, j = 0, k = 0;
+
+        while (i < m && j < n) {
+            if (num1[i] < num2[j]) {
+                num3[k++] = num1[i++];
+            } else {
+                num3[k++] = num2[j++];
+            }
+        }
+
+        while (i < m) {
+            num3[k++] = num1[i++];
+        }
+
+        while (j < n) {
+            num3[k++] = num2[j++];
+        }
+
+        for (int x = 0; x < m + n; x++) {
+            num1[x] = num3[x];
+        }
+    }
+
+    public static void main(String[] args) {
+        int m = 3, n = 2;
+        int[] num1 = new int[m + n]; // length = 7
+        num1[0] = 5;
+        num1[1] = 6;
+        num1[2] = 7;
+        num1[3] = 8;
+       
+
+        int[] num2 = {6, 7, 3}; // length = 3
+
+        Solution obj = new Solution();
+        obj.merge(num1, m, num2, n);
+
+        for (int i = 0; i < m + n; i++) {
+            System.out.print(num1[i] + " ");
+        }
+    }
+}
+==========================
+//Question 4-sort 0sand 1s and 2s
+===========================
+public class Sort012 {
+
+    // Method to sort the array using counting
+    public static void sort012(int[] arr) {
+        int n = arr.length;
+
+        // Step 1: Count the number of 0s, 1s, and 2s
+        int count0 = 0, count1 = 0, count2 = 0;
+
+        for (int num : arr) {
+            if (num == 0) count0++;
+            else if (num == 1) count1++;
+            else if (num == 2) count2++;
+        }
+
+        // Step 2: Rewrite the array based on counts
+        for (int i = 0; i < n; i++) {
+            if (count0 > 0) {
+                arr[i] = 0;
+                count0--;
+            } else if (count1 > 0) {
+                arr[i] = 1;
+                count1--;
+            } else {
+                arr[i] = 2;
+                count2--;
+            }
+        }
+    }
+
+    // Main method to test the sorting
+    public static void main(String[] args) {
+        int[] arr = {0, 1, 2, 0, 2, 1, 0};
+
+        System.out.println("Before sorting:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+
+        sort012(arr);  // Call the sorting method
+
+        System.out.println("\nAfter sorting:");
+         for (int i = 0; i < arr.length; i++)//replace for enhanced for loop with traditional for loop{
+            System.out.print(num + " ");
+        }
+    }
+
+=========================
+//Question 5 - rotate array by 1
+===========================
+class Solution {
+    public void rotate(int[] arr) {
+    int n=arr.length;
+    int last=arr[n-1];
+    for(int i=n-1;i>=1;i--){
+        arr[i]=arr[i-1];
+    }
+    arr[0]=last;
+    }
+public static void main(String[] args){
+    Solution ob=new Solution();
+    int[] arr={1,2,3,4,5};
+    ob.rotate(arr);
+     for (int i = 0; i < arr.length; i++) {
+        System.out.print(arr[i] + " ");
+    }
+}}
+===========================
+//Question 6 - rotate array by k
+===========================
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int n = nums.length;
+        k = k % n; // Normalize k to avoid unnecessary full-circle rotations
+
+        for (int i = 0; i < k; i++) {
+            int last = nums[n - 1]; // Save the last element
+            for (int j = n - 1; j > 0; j--) {
+                nums[j] = nums[j - 1]; // Shift elements to the right
+            }
+            nums[0] = last; // Put the last element at the start
+        }
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        
+        // Example input
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        int k = 3;
+
+        System.out.println("Before rotation:");
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+
+        // Rotate the array
+        sol.rotate(nums, k);
+
+        System.out.println("\nAfter rotation by " + k + " steps:");
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+    }
+}
