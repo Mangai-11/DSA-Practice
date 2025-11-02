@@ -161,3 +161,43 @@ public class MissingNumber {
         System.out.println("Missing number: " + findMissingNumber(arr, n));
     }
 }
+
+==================================
+//Question 5- search elemet that apprears once in a sorted array 
+==================================
+
+class Solution {
+    public static int element(int a[]) {
+        int i = 0, j = a.length - 1;
+
+        while (i < j) {
+            int mid = (i + j) / 2;
+            if (mid % 2 == 1) mid--; // make mid even for pair checking
+
+            if (a[mid] == a[mid + 1]) {
+                i = mid + 2;
+            } else {
+                j = mid;
+            }
+        }
+
+        //no unique element
+        if (i < a.length - 1 && a[i] == a[i + 1]) {
+            return -1; // no single element
+        }
+
+        return a[i];
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        int a[] = {1, 1, 2, 2, 3, 3, 4, 4};
+        int result = Solution.element(a);
+
+        if (result == -1)
+            System.out.println("No unique element found");
+        else
+            System.out.println("Unique element: " + result);
+    }
+}
